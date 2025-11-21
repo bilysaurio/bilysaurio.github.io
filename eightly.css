@@ -1,0 +1,262 @@
+/* Definición de variables globales (CSS custom properties) */
+:root {
+    --cyan-border-color: #00BFFF; 
+}
+html {
+    scroll-behavior: smooth;
+    overflow-y: scroll; 
+}
+
+body, html {
+    margin: 0;
+    padding: 0;
+    height: 100vh;
+    font-family: sans-serif; 
+    color: white;
+    background-color: #000;
+}
+
+.video-ojos {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    overflow: hidden;
+}
+
+/* Video: Cobertura total y centrado */
+.video-ojos video {
+    width: 100%;
+    height: 100%;
+    object-fit: cover; 
+    object-position: center;
+}
+
+
+/* 2. CONTENEDOR PRINCIPAL Y CENTRADO */
+
+.bil-container {
+    min-height: 100vh;
+    position: relative;
+    z-index: 100;
+    display: flex;
+    flex-direction: column;
+}
+
+.paginabil-content {
+    flex-grow: 1; 
+    text-align: center;
+    
+    display: flex;
+    flex-direction: column; 
+    justify-content: center; /* Centrado Vertical */
+    align-items: center; /* Centrado Horizontal */
+    
+    padding: 20px 0;
+}
+
+
+/* 3. ESTILOS DE ELEMENTOS (AJUSTE DE TAMAÑOS) */
+
+/* LOGO GRANDE (Eightly) */
+.logo-centered {
+    font-size: 4em; 
+    font-weight: bold;
+    margin-bottom: 50px;
+    margin-top: -10vh; 
+}
+
+/* ÍCONO 3D (Si aplica) */
+.icono3d img {
+    width: 200px; 
+    height: auto;
+    margin-bottom: 50px;
+}
+
+/* MENÚ PEQUEÑO */
+.footer-nav ul {
+    list-style: none;
+    margin: 0;
+    padding: 0;
+    display: flex;
+    flex-direction: column; 
+    align-items: center; 
+    gap: 15px; 
+    margin-bottom: 30px;
+}
+
+.footer-nav ul li a {
+    color: white;
+    text-decoration: none;
+    font-size: 0.9em; 
+    text-transform: uppercase;
+    transition: color 0.3s;
+}
+
+.footer-nav ul li a:hover {
+    color: #b3b3b3;
+}
+
+
+.redes-sociales-links {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    gap: 20px;
+    margin-bottom: 30px;
+}
+
+.redes-sociales-links img {
+    width: 30px; 
+    height: 30px;
+    filter: invert(1);
+    transition: transform 0.2s ease;
+}
+
+.redes-sociales-links img:hover {
+    transform: scale(1.1);
+}
+
+/* 4. BOTÓN PERSONALIZADO (EFECTO INVERSIÓN) */
+
+.personalizado-button {
+    background: transparent;
+    border: 1px solid var(--cyan-border-color); 
+    
+    padding: 10px 15px;
+    font-size: 1em;
+    cursor: pointer;
+    text-decoration: none;
+    
+    display: flex; 
+    align-items: center;
+    justify-content: center;
+    position: relative;
+    min-width: 250px; 
+    
+    transition: border-color 0.3s ease, box-shadow 0.3s ease; 
+}
+
+/* ESTADO HOVER: El recuadro desaparece */
+.personalizado-button:hover {
+    border-color: transparent; 
+    box-shadow: none; 
+}
+
+/* Texto del Botón */
+.personalizado-button .button-texto {
+    white-space: nowrap;
+    text-transform: uppercase;
+    flex-shrink: 0; 
+    color: var(--cyan-border-color);
+    transition: color 0.3s ease;
+}
+
+/* ESTADO HOVER: El texto se vuelve blanco */
+.personalizado-button:hover .button-texto {
+    color: white;
+}
+
+
+/* 5. RESPONSIVE (MÓVILES) */
+@media (max-width: 768px) {
+    body {
+        overflow: auto;
+    }
+    
+    .icono3d img {
+        width: 200px;
+        margin-bottom: 30px;
+    }
+
+    .footer-nav ul {
+        gap: 8px;
+    }
+    
+    .footer-nav ul li a {
+        font-size: 0.8em; 
+    }
+    
+    .redes-sociales-links img {
+        width: 25px;
+        height: 25px;
+    }
+}
+
+/* HABILITA EL SCROLL SUAVE EN TODA LA PÁGINA */
+html {
+    scroll-behavior: smooth;
+    /* La página debe poder desplazarse verticalmente */
+    overflow-y: scroll; 
+}
+
+/* Modifica el body/html para permitir scroll si usas overflow: hidden */
+body, html {
+    /* Si tienes 'overflow: hidden' en body/html, elimínalo o cámbialo a 'auto' */
+    overflow: auto; 
+}
+
+/* Ocultar el contenido de la primera sección (para que el scroll funcione bien) */
+.bil-container {
+    min-height: 100vh;
+    /* ... otras propiedades ... */
+}
+
+.carousel-container { 
+    position: relative; 
+    width: 100%; 
+    max-width: 900px; 
+    height: 550px;
+    margin: 100px auto; 
+    overflow: hidden; 
+    border-radius: 10px; 
+    box-shadow: 0 0 10px rgba(0,0,0,0,2);
+} 
+.carousel {
+    display: flex;
+    transition: transform 0.5s ease-in-out;
+    /* 5 slides * 100% cada uno = 500% */
+    width: 500%; 
+}
+.carousel img { 
+    /* Cada imagen debe ocupar 1/5 del ancho total (20%) */
+    width: 20%; 
+    height: auto;
+}
+.carousel-wrapper { 
+    animation: autoSlide 12s infinite;
+}
+.carousel-container:hover .carouselwrapper { 
+    animation-play-state: paused;
+}
+
+@keyframes autoSlide {
+    /* Muestra la Imagen 1 */
+    0% { transform: translateX(0%); }
+    20% { transform: translateX(0%); } /* Se detiene en la Imagen 1 */
+    
+    /* Muestra la Imagen 2 */
+    25% { transform: translateX(-100%); }
+    45% { transform: translateX(-100%); } /* Se detiene en la Imagen 2 */
+    
+    /* Muestra la Imagen 3 */
+    50% { transform: translateX(-200%); }
+    70% { transform: translateX(-200%); } /* Se detiene en la Imagen 3 */
+    
+    /* Muestra la Imagen 4 */
+    75% { transform: translateX(-300%); }
+    90% { transform: translateX(-300%); } /* Se detiene en la Imagen 4 */
+    
+    /* Muestra la Imagen 5 */
+    95% { transform: translateX(-400%); }
+    
+    /* Regresa a la Imagen 1 */
+    100% { transform: translateX(0%); } 
+}
+
+/* Modifica la duración de la animación a 15s para 5 imágenes */
+.carousel-wrapper { 
+    animation: autoSlide 10s infinite; 
+}
+

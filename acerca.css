@@ -1,0 +1,65 @@
+/* ======================================
+    SUBPAGES.CSS 
+    Estilos para Acerca.html, Comercio.html, etc.
+    ======================================
+*/
+
+/* 1. Ajuste del Video para que 'encaje' (Contain) */
+.video-ojos video {
+    /* Desactivamos min-width/height para que 'contain' 
+       funcione y no fuerce el video a ser más grande. 
+    */
+    min-width: 0%; 
+    min-height: 0%;
+
+    /* ESTO HACE QUE EL VIDEO ENTRE COMPLETAMENTE */
+    object-fit: contain; 
+    
+    /* Centrar el video en el espacio (importante con contain) */
+    object-position: center; 
+    
+    /* El background-color del <body> sigue siendo #000 (negro) 
+       así que los espacios se verán negros automáticamente.
+    */
+    
+    /* 2. Ajuste de Filtro (Recomendación) */
+    /* Como el video tiene colores brillantes, lo oscurecemos
+       para que el texto blanco Eightly se siga viendo claro.
+    */
+    filter: brightness(0.4) contrast(1.1); 
+}
+
+/* Puedes añadir más estilos de subpágina aquí... */
+
+/* Estilos para el botón de audio en subpáginas */
+
+/* Estilos para el botón de audio en subpáginas (VERSIÓN REDUCIDA) */
+
+.sound-button {
+    background: transparent;
+    color: none; /* Color cian para que destaque */
+    border: none; 
+    
+    /* Hacemos el botón pequeño y cuadrado */
+    width: 40px; 
+    height: 40px;
+    padding: 0; /* Quitamos el padding */
+    
+    font-size: 1.2em; /* Ícono visible */
+    line-height: 40px; /* Centra el ícono verticalmente */
+    text-align: center;
+    cursor: pointer;
+    
+    /* Posicionamiento */
+    margin-top: 30px; 
+    z-index: 100;
+    
+    /* Transiciones */
+    transition: background-color 0.3s, color 0.3s, border-color 0.3s;
+}
+
+.sound-button:hover {
+    background-color: none; /* Se llena de cian al pasar el ratón */
+    color: black;
+    border-color: black; /* O puedes usar transparent, lo que se vea mejor */
+}

@@ -1,0 +1,134 @@
+/* comercio.css */
+
+/* Definición de variables globales (si se usan) */
+:root {
+    --cyan-border-color: #00BFFF; 
+}
+
+/* Estilos de base para la página de comercio */
+body {
+    background-color: #000;
+    color: white;
+    font-family: sans-serif;
+    margin: 0;
+    padding: 0;
+    min-height: 100vh;
+}
+
+/* 1. ESTILOS DE LA SECCIÓN DE COMERCIO */
+
+.scroll-target {
+    background-color: #000;
+    min-height: 100vh; 
+    text-align: center;
+    padding: 100px 20px;
+}
+
+.comercio-titulo {
+    font-size: 2.5em;
+    margin-bottom: 30px;
+    color: var(--cyan-border-color);
+    background: transparent; 
+    display: inline-block;
+    padding: 10px 0;
+}
+
+/* 2. CARRUSEL */
+.carousel-container { 
+    background-color: transparent;
+    box-shadow: none;
+    position: relative; 
+    width: 80%;       
+    max-width: 500px; 
+    height: 300px;    
+    margin: 50px auto; 
+    overflow: hidden; 
+    border-radius: 10px; 
+} 
+
+.carousel {
+    display: flex;
+    transition: transform 0.5s ease-in-out;
+    width: 500%; 
+}
+
+.carousel-wrapper { 
+    animation: autoSlide 15s infinite; 
+}
+
+.carousel-container:hover .carousel-wrapper { 
+    animation-play-state: paused; 
+}
+
+.carousel img { 
+    width: 20%; 
+    height: 300px; 
+    object-fit: contain;
+}
+
+@keyframes autoSlide {
+    0% { transform: translateX(0%); }
+    20% { transform: translateX(0%); } 
+    25% { transform: translateX(-100%); }
+    45% { transform: translateX(-100%); } 
+    50% { transform: translateX(-200%); }
+    70% { transform: translateX(-200%); } 
+    75% { transform: translateX(-300%); }
+    90% { transform: translateX(-300%); } 
+    95% { transform: translateX(-400%); }
+    100% { transform: translateX(0%); } 
+}
+
+
+/* 3. ESTILOS DE TARJETAS DE PRODUCTOS */
+
+.productos-grid {
+    display: grid;
+    grid-template-columns: repeat(2, 1fr); 
+    gap: 20px;
+    max-width: 1200px;
+    margin: 60px auto 40px auto;
+    padding: 0 10px;
+}
+
+.producto-card {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    text-align: center;
+    padding: 20px;
+    color: white; 
+    background-color: #000; 
+    border-radius: 10px;
+    border: 1px solid var(--cyan-border-color);
+    box-shadow: 0 0 10px rgba(0, 191, 255, 0.5);
+}
+
+/* ... (otros estilos de texto y botón) ... */
+.producto-card img {
+    width: 100%;
+    height: auto;
+    margin-bottom: 10px;
+}
+
+.producto-nombre {
+    font-size: 1em;
+    font-weight: 500;
+    margin: 5px 0;
+}
+
+.producto-precio {
+    font-size: 1.1em;
+    font-weight: bold;
+    margin: 5px 0;
+    color: var(--cyan-border-color);
+}
+
+.producto-intereses {
+    font-size: 0.8em;
+    color: #ff3366; 
+    margin-bottom: 10px;
+}
+
+.boton-comprar {
+    background-color: #ff3366;
